@@ -1,3 +1,0 @@
-/home/faris/CLionProjects/OpenCV/build/CMakeFiles/OpenCV.dir
-/home/faris/CLionProjects/OpenCV/build/CMakeFiles/edit_cache.dir
-/home/faris/CLionProjects/OpenCV/build/CMakeFiles/rebuild_cache.dir

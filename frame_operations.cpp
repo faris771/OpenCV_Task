@@ -73,7 +73,32 @@ cv::Mat FrameOperations::makeGrayFrame(cv::Mat originalFrame) {
 
 }
 
-cv::Mat FrameOperations::makeFlippedFrame(cv::Mat originalFrame) {
+cv::Mat FrameOperations::makeMirrorFrame(cv::Mat originalFrame) {
 
-    return cv::Mat();
+    cv::Mat mirrorFrame = originalFrame.clone();
+    cv::Mat upHalf = originalFrame.clone();
+    cv::Mat downHalf;
+    cv::flip(upHalf, downHalf, 0);
+    cv::resize(upHalf, upHalf, cv::Size(upHalf.cols, upHalf.rows / 2));
+    cv::resize(downHalf, downHalf, cv::Size(downHalf.cols, downHalf.rows / 2));
+    cv::vconcat(upHalf, downHalf, mirrorFrame);
+
+    return mirrorFrame;
+}
+
+cv::Mat FrameOperations::makeOutPutFrame(std::vector<cv::Mat> col1, std::vector<cv::Mat> col2) {
+
+
+    cv::Mat out1;
+    cv::Mat out2;
+    cv::Mat out;
+
+
+    cv::vconcat(col1, out1);
+    cv::vconcat(col2, out2);
+    cv::hconcat(out1, out2, out);
+
+
+    return out;
+
 }

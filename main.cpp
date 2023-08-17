@@ -12,7 +12,7 @@ int main() {
 
     cv::VideoCapture cap(0);
 
-    cv::Mat blueFrame, originalFrame, nonBlueFrame, grayFrame, fpsFrame, logoFrame, mirrorFrame;
+    cv::Mat blueFrame, originalFrame, nonBlueFrame, grayFrame, fpsFrame, logoFrame, mirrorFrame, outPutFrame;
 
     cv::Mat splitChannelsForNonBlue[3], splitChannelsForGray[3]; // BRG
 
@@ -34,9 +34,6 @@ int main() {
         cap.read(originalFrame);
         cv::resize(originalFrame, originalFrame, cv::Size(550, 320));
 
-
-        cv::split(originalFrame, splitChannelsForGray);
-
         numFramesCaptured++;
         time(&curTime);
         secElapsed = difftime(curTime, startTime);
@@ -47,35 +44,14 @@ int main() {
         nonBlueFrame = FrameOperations::makeNonBlueFrame(originalFrame);
         logoFrame = FrameOperations::makeLogoFrame(originalFrame);
         grayFrame = FrameOperations::makeGrayFrame(originalFrame);
-
-
-
-        // mirror
-        mirrorFrame = originalFrame.clone();
-
-        cv::Mat upHalf = originalFrame.clone();
-        cv::Mat downHalf;
-        cv::flip(upHalf, downHalf, 0);
-        cv::resize(upHalf, upHalf, cv::Size(upHalf.cols, upHalf.rows / 2));
-        cv::resize(downHalf, downHalf, cv::Size(downHalf.cols, downHalf.rows / 2));
-        cv::vconcat(upHalf, downHalf, mirrorFrame);
-
-
+        mirrorFrame = FrameOperations::makeMirrorFrame(originalFrame);
         std::vector<cv::Mat> col1 = {fpsFrame, nonBlueFrame, grayFrame};
         std::vector<cv::Mat> col2 = {blueFrame, logoFrame, mirrorFrame};
+        outPutFrame = FrameOperations::makeOutPutFrame(col1, col2);
 
 
-        cv::Mat out1;
-        cv::Mat out2;
-        cv::Mat out;
 
-
-        cv::vconcat(col1, out1);
-        cv::vconcat(col2, out2);
-        cv::hconcat(out1, out2, out);
-
-
-        cv::imshow("tst", out);
+        cv::imshow("tst", outPutFrame);
 
 
         cv::waitKey(1);

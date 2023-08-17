@@ -23,10 +23,16 @@ public:
 
     static cv::Mat makeGrayFrame(cv::Mat originalFrame);
 
-    static cv::Mat makeFlippedFrame(cv::Mat originalFrame);
+    static cv::Mat makeMirrorFrame(cv::Mat originalFrame);
 
     static cv::Mat makeFpsFrame(cv::Mat originalFrame, double curFPS);
 
     static cv::Mat makeBlueFrame(cv::Mat originalFrame);
+
+    static cv::Mat makeOutPutFrame(std::vector<cv::Mat> col1, std::vector<cv::Mat> col2);
+
+
+
+
 };
 

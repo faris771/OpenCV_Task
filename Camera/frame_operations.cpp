@@ -24,7 +24,7 @@ cv::Mat FrameOperations::makeBlueFrame( cv::Mat originalFrame) {
     cv::Mat blueFrame;
     cv::Mat splitChannelsForBlue[3];
 
-    cv::split(originalFrame, splitChannelsForBlue);
+    cv::split(originalFrame, splitChannelsForBlue); // BRG
     splitChannelsForBlue[1] = cv::Mat::zeros(splitChannelsForBlue[1].size(), CV_8UC1);
     splitChannelsForBlue[2] = cv::Mat::zeros(splitChannelsForBlue[2].size(), CV_8UC1);
     cv::merge(splitChannelsForBlue, 3, blueFrame);

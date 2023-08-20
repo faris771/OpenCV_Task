@@ -8,7 +8,12 @@ class WebCam{
 
 
 public:
-    static void run();
+    int index;
+
+    WebCam(int index) : index(index) {
+
+    }
+    void run();
 
 
 

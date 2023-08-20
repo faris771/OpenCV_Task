@@ -10,7 +10,10 @@
 int main() {
     //run
 
-    WebCam::run();
+    WebCam cam0(0);
+    cam0.run();
+
+
 
     return 0;
 

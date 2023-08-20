@@ -6,7 +6,9 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 
 add_executable(OpenCV
         main.cpp
-        frame_operations.cpp
-        frame_operations.h
+        Camera/frame_operations.cpp
+        Camera/frame_operations.h
+        Camera/web_cam.cpp
+        Camera/web_cam.h
 )
 target_link_libraries(OpenCV ${OpenCV_LIBS})

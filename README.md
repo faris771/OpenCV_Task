@@ -16,7 +16,10 @@ the final output should be in this form:
 
 
 
-https://github.com/faris771/OpenCv_Task/assets/70337488/9fc72d7b-4a93-4360-b0af-ec8f42c52b8f
+https://github.com/faris771/OpenCV_Task/assets/70337488/69f72b8b-c4ac-475e-bd53-2a5780a09421
+
+
+
 
 ## Setup
 To install the project, run the following command in the terminal:

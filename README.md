@@ -14,3 +14,13 @@ the final output should be in this form:
 | Gray Frame   | Mirror Frame  |
 
 
+
+
+https://github.com/faris771/OpenCv_Task/assets/70337488/9fc72d7b-4a93-4360-b0af-ec8f42c52b8f
+
+
+
+
+
+
+

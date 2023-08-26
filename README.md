@@ -44,7 +44,7 @@ mkdir build
 cd build
 cmake ..
 make
-./Faris
+./OpenCV_Task
 
 ```
 

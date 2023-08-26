@@ -18,8 +18,35 @@ the final output should be in this form:
 
 https://github.com/faris771/OpenCv_Task/assets/70337488/9fc72d7b-4a93-4360-b0af-ec8f42c52b8f
 
+## Setup
+To install the project, run the following command in the terminal:
+
+```bash
+git clone https://github.com/faris771/OpenCV_Task.git
+cd OpenCV_Task
+
+```
+install OpenCV on your machine, follow this [link](https://www.geeksforgeeks.org/how-to-install-opencv-in-c-on-linux/)
 
 
+Make sure Cmake is installed on your machine:
+
+```bash
+sudo snap install cmake --classic
+```
+
+After installing Cmake:
+```bash
+mkdir build
+
+```
+```bash
+cd build
+cmake ..
+make
+./Faris
+
+```
 
 
 
